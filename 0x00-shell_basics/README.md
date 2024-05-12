@@ -1,1 +1,1 @@
-This repository contains command lines to demonstrate various functions in bash
+A directory for the shell basics

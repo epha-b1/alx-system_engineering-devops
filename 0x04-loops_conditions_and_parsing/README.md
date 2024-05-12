@@ -1,280 +1,49 @@
-# ALX System Engineering DevOps Project: Loops, Conditions, and Parsing
+# 0x04 Loops, Conditions, and Parsing
 
-This repository contains solutions to a series of tasks related to loops, conditions, and parsing in Bash scripting.
+This repository contains Bash scripts that cover various concepts related to loops, conditions, and parsing in Shell scripting.
 
-## Table of Contents
+## Files
 
-1. [Create a SSH RSA key pair](#1-create-a-ssh-rsa-key-pair)
-2. [For Best School](#2-for-best-school)
-3. [While Best School loop](#3-while-best-school-loop)
-4. [Until Best School loop](#4-until-best-school-loop)
-5. [If 9, say Hi!](#5-if-9-say-hi)
-6. [4 bad luck, 8 is your chance](#6-4-bad-luck-8-is-your-chance)
-7. [Superstitious numbers](#7-superstitious-numbers)
-8. [Clock](#8-clock)
-9. [For ls](#9-for-ls)
-10. [To file, or not to file](#10-to-file-or-not-to-file)
-11. [FizzBuzz](#11-fizzbuzz)
-12. [Read and cut](#12-read-and-cut)
-13. [Tell the story of passwd](#13-tell-the-story-of-passwd)
-14. [Let's parse Apache logs](#14-lets-parse-apache-logs)
-15. [Dig the data](#15-dig-the-data)
+1. **0-RSA_public_key.pub**: Contains the public RSA key generated for SSH access.
+2. **1-for_best_school**: Bash script that displays "Best School" 10 times using a for loop.
+3. **2-while_best_school**: Bash script that displays "Best School" 10 times using a while loop.
+4. **3-until_best_school**: Bash script that displays "Best School" 10 times using an until loop.
+5. **4-if_9_say_hi**: Bash script that displays "Best School" 10 times, but says "Hi" on the 9th iteration.
+6. **5-4_bad_luck_8_is_your_chance**: Bash script that displays different messages based on loop iteration.
+7. **6-superstitious_numbers**: Bash script that displays numbers from 1 to 20 with superstition-related messages.
+8. **7-clock**: Bash script that displays the time for 12 hours and 59 minutes.
+9. **8-for_ls**: Bash script that lists the content of the current directory in a specific format.
+10. **9-to_file_or_not_to_file**: Bash script that provides information about a file.
+11. **10-fizzbuzz**: Bash script that displays numbers from 1 to 100 with specific rules (FizzBuzz game).
+12. **100-read_and_cut**: Bash script that displays specific information from the /etc/passwd file.
+13. **101-tell_the_story_of_passwd**: Bash script that tells a story based on the content of the /etc/passwd file.
+14. **102-lets_parse_apache_logs**: Bash script that parses Apache access logs and displays visitor IP along with HTTP status codes.
+15. **103-dig_the-data**: Bash script that groups visitors by IP and HTTP status code from Apache logs and displays the data.
 
-## 1. Create a SSH RSA key pair
+## Requirements
 
-- Follow the provided instructions to create an SSH RSA key pair.
-- Share your public key in the file `0-RSA_public_key.pub`.
-- Fill the SSH public key field of your intranet profile with the generated public key.
-- Keep the private key secure for future server access.
+- Bash scripts should be executable.
+- Scripts should pass Shellcheck without any error.
+- The first line of each Bash script should be `#!/usr/bin/env bash`.
+- Each script should have a comment explaining its purpose.
 
-## 2. For Best School
+## How to Use
 
-Write a Bash script that displays "Best School" 10 times using a for loop.
-
-```bash
-#!/usr/bin/env bash
-# This script is displaying "Best School" 10 times
-for i in {1..10}; do
-  echo "Best School"
-done
-```
-
-## 3. While Best School loop
-
-Write a Bash script that displays "Best School" 10 times using a while loop.
+1. Clone the repository:
 
 ```bash
-#!/usr/bin/env bash
-# This script is displaying "Best School" 10 times
-count=0
-while [ $count -lt 10 ]; do
-  echo "Best School"
-  ((count++))
-done
+git clone https://github.com/Dagmawi-Y/alx-system_engineering-devops/0x04-loops_conditions_and_parsing.git
 ```
-
-## 4. Until Best School loop
-
-Write a Bash script that displays "Best School" 10 times using an until loop.
+2. Navigate to the directory:
 
 ```bash
-#!/usr/bin/env bash
-# This script is displaying "Best School" 10 times
-count=0
-until [ $count -ge 10 ]; do
-  echo "Best School"
-  ((count++))
-done
+cd 0x04-loops_conditions_and_parsing
 ```
-
-## 5. If 9, say Hi!
-
-Write a Bash script that displays "Best School" 10 times, but for the 9th iteration, displays "Hi" on a new line.
+3.Run any bash script:
 
 ```bash
-#!/usr/bin/env bash
-# This script displays "Best School" 10 times, with "Hi" on the 9th iteration
-count=0
-while [ $count -lt 10 ]; do
-  if [ $count -eq 8 ]; then
-    echo "Hi"
-  else
-    echo "Best School"
-  fi
-  ((count++))
-done
+./script_name.sh
 ```
 
-## 6. 4 bad luck, 8 is your chance
-
-Write a Bash script that loops from 1 to 10 and:
-
-- Displays "bad luck" for the 4th loop iteration.
-- Displays "good luck" for the 8th loop iteration.
-- Displays "Best School" for the other iterations.
-
-```bash
-#!/usr/bin/env bash
-# This script displays messages based on loop iteration
-for i in {1..10}; do
-  if [ $i -eq 4 ]; then
-    echo "bad luck"
-  elif [ $i -eq 8 ]; then
-    echo "good luck"
-  else
-    echo "Best School"
-  fi
-done
-```
-
-## 7. Superstitious numbers
-
-Write a Bash script that displays numbers from 1 to 20 and:
-
-- Displays "4 and then bad luck from China" for the 4th loop iteration.
-- Displays "9 and then bad luck from Japan" for the 9th loop iteration.
-- Displays "17 and then bad luck from Italy" for the 17th loop iteration.
-
-```bash
-#!/usr/bin/env bash
-# This script displays numbers with superstitions
-for i in {1..20}; do
-  case $i in
-    4)
-      echo "$i and then bad luck from China"
-      ;;
-    9)
-      echo "$i and then bad luck from Japan"
-      ;;
-    17)
-      echo "$i and then bad luck from Italy"
-      ;;
-    *)
-      echo "$i"
-      ;;
-  esac
-done
-```
-
-## 8. Clock
-
-Write a Bash script that displays the time for 12 hours and 59 minutes.
-
-```bash
-#!/usr/bin/env bash
-# This script displays the time for 12 hours and 59 minutes
-hour=0
-while [ $hour -lt 12 ]; do
-  echo "Hour: $hour"
-  for minute in {1..59}; do
-    echo "$minute"
-  done
-  ((hour++))
-done
-```
-
-## 9. For ls
-
-Write a Bash script that displays the content of the current directory in a list format, where only the part of the name after the first dash is displayed.
-
-```bash
-#!/usr/bin/env bash
-
-
-# This script displays the content of the current directory in a list format
-for file in *; do
-  echo "${file#*-}"
-done
-```
-
-## 10. To file, or not to file
-
-Write a Bash script that gives you information about the holbertonschool file.
-
-```bash
-#!/usr/bin/env bash
-# This script gives information about the holbertonschool file
-file="holbertonschool"
-if [ -e "$file" ]; then
-  if [ -f "$file" ]; then
-    echo "$file exists and is a regular file"
-  else
-    echo "$file exists but is not a regular file"
-  fi
-else
-  echo "$file does not exist"
-fi
-```
-
-## 11. FizzBuzz
-
-Write a Bash script that displays numbers from 1 to 100, but:
-
-- Displays "Fizz" for multiples of 3.
-- Displays "Buzz" for multiples of 5.
-- Displays "FizzBuzz" for multiples of both 3 and 5.
-
-```bash
-#!/usr/bin/env bash
-# This script displays numbers from 1 to 100 with Fizz, Buzz, and FizzBuzz conditions
-for i in {1..100}; do
-  if [ $((i % 3)) -eq 0 ] && [ $((i % 5)) -eq 0 ]; then
-    echo "FizzBuzz"
-  elif [ $((i % 3)) -eq 0 ]; then
-    echo "Fizz"
-  elif [ $((i % 5)) -eq 0 ]; then
-    echo "Buzz"
-  else
-    echo "$i"
-  fi
-done
-```
-
-## 12. Read and cut
-
-Write a Bash script that displays the content of the file `/etc/passwd` and:
-
-- Displays only the username.
-- Displays the user's home directory.
-- Displays the user's default shell.
-
-```bash
-#!/usr/bin/env bash
-# This script displays information from /etc/passwd
-while IFS=':' read -r user x uid gid desc home shell; do
-  echo "Username: $user"
-  echo "Home directory: $home"
-  echo "Default shell: $shell"
-done < /etc/passwd
-```
-
-## 13. Tell the story of passwd
-
-Write a Bash script that displays the content of `/etc/passwd` and:
-
-- Displays only lines containing "/bin/bash".
-- Displays only the username and description for those lines.
-
-```bash
-#!/usr/bin/env bash
-# This script displays information from /etc/passwd for users with /bin/bash as their shell
-while IFS=':' read -r user x uid gid desc home shell; do
-  if [ "$shell" = "/bin/bash" ]; then
-    echo "Username: $user"
-    echo "Description: $desc"
-  fi
-done < /etc/passwd
-```
-
-## 14. Let's parse Apache logs
-
-Write a Bash script that displays the visitor IP along with the HTTP code from an Apache log file.
-
-```bash
-#!/usr/bin/env bash
-# This script parses Apache logs and displays visitor IP with HTTP code
-awk '{print $1, $9}' /var/log/apache2/access.log
-```
-
-## 15. Dig the data
-
-Now that you’ve parsed the Apache log file, let’s sort the data so you can get a better idea of what is going on.
-
-```bash
-./103-dig_the-data | head -n 10
-```
-
-Requirements:
-- The exact format must be: `OCCURRENCE_NUMBER IP HTTP_CODE`
-- In list format
-- Ordered from the greatest to the lowest number of occurrences
-
-## Repository Information
-
-- GitHub Repository: [alx-system_engineering-devops](https://github.com/paschalugwu/alx-system_engineering-devops)
-- Directory: 0x04-loops_conditions_and_parsing
-
-## License
-
-Copyright © 2023 ALX, All rights reserved.
-```
+## Author
+- Dagmawi Yohannes

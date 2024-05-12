@@ -1,1 +1,1 @@
-This is a project on Shell, init files, variables and expansions.
+A directory for shell variables and expansions tasks

@@ -1,124 +1,27 @@
-# Project Title: alx-system_engineering-devops
+# Processes and Signals
 
-## Description
+This repository contains Bash scripts and a C program focused on understanding processes and signals in Linux.
 
-This repository contains a set of Bash and C scripts related to processes and signals. Each script is designed to perform specific tasks, such as displaying process information, managing processes, and handling signals. Additionally, there is a C program that creates zombie processes.
+## Files
 
-## Table of Contents
+Here's a brief overview of the files in this repository:
 
-1. [What is my PID](#what-is-my-pid)
-2. [List your processes](#list-your-processes)
-3. [Show your Bash PID](#show-your-bash-pid)
-4. [Show your Bash PID made easy](#show-your-bash-pid-made-easy)
-5. [To infinity and beyond](#to-infinity-and-beyond)
-6. [Don't stop me now!](#dont-stop-me-now)
-7. [Stop me if you can](#stop-me-if-you-can)
-8. [Highlander](#highlander)
-9. [Beheaded process](#beheaded-process)
-10. [Process and PID file](#process-and-pid-file)
-11. [Manage my process](#manage-my-process)
-12. [Zombie](#zombie)
+- `0-what-is-my-pid`: Bash script that displays its own PID.
+- `1-list_your_processes`: Bash script that lists currently running processes.
+- `2-show_your_bash_pid`: Bash script that displays lines containing the word "bash" along with their PID.
+- `3-show_your_bash_pid_made_easy`: Bash script that displays the PID and process name of processes containing the word "bash".
+- `4-to_infinity_and_beyond`: Bash script that displays "To infinity and beyond" indefinitely.
+- `5-dont_stop_me_now`: Bash script that stops the `4-to_infinity_and_beyond` process.
+- `6-stop_me_if_you_can`: Bash script that stops the `4-to_infinity_and_beyond` process without using `kill` or `killall`.
+- `7-highlander`: Bash script that displays "To infinity and beyond" indefinitely, with special messages upon receiving signals.
+- `8-beheaded_process`: Bash script that kills the `7-highlander` process.
+- `102-zombie.c`: C program that creates zombie processes.
 
-## How to Use
+## Usage
 
-### 1. What is my PID
-
-This script displays its own PID.
-
-```bash
-./0-what-is-my-pid
-```
-
-### 2. List your processes
-
-This script displays a list of currently running processes.
-
-```bash
-./1-list_your_processes
-```
-
-### 3. Show your Bash PID
-
-This script displays lines containing the word "bash" and its PID.
-
-```bash
-./2-show_your_bash_pid
-```
-
-### 4. Show your Bash PID made easy
-
-This script displays the PID and process name of processes containing the word "bash."
-
-```bash
-./3-show_your_bash_pid_made_easy
-```
-
-### 5. To infinity and beyond
-
-This script displays "To infinity and beyond" indefinitely.
-
-```bash
-./4-to_infinity_and_beyond
-```
-
-### 6. Don't stop me now!
-
-This script stops the process created by `4-to_infinity_and_beyond` using the `kill` command.
-
-```bash
-./5-dont_stop_me_now
-```
-
-### 7. Stop me if you can
-
-This script stops the process created by `4-to_infinity_and_beyond` without using `kill` or `killall`.
-
-```bash
-./6-stop_me_if_you_can
-```
-
-### 8. Highlander
-
-This script displays "To infinity and beyond" and additional messages, becoming invincible upon receiving a SIGTERM signal.
-
-```bash
-./7-highlander
-```
-
-### 9. Beheaded process
-
-This script kills the process created by `7-highlander`.
-
-```bash
-./8-beheaded_process
-```
-
-### 10. Process and PID file
-
-This script creates a PID file, displays messages, and terminates itself on signal reception.
-
-```bash
-sudo ./100-process_and_pid_file
-```
-
-### 11. Manage my process
-
-This script manages the `100-process_and_pid_file` script, providing start, stop, and restart functionalities.
-
-```bash
-sudo ./101-manage_my_process {start|stop|restart}
-```
-
-### 12. Zombie
-
-This C program creates 5 zombie processes.
-
-```bash
-gcc 102-zombie.c -o zombie
-./zombie
-```
+Each script has its own specific functionality and usage. Refer to the comments within each script for more details on how to use them.
 
 ## Author
 
-This project is maintained by Paschal Ugwu.
+- Dagmawi Yohannes
 

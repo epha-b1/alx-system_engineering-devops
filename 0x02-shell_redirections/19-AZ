@@ -1,2 +1,2 @@
 #!/bin/bash
-tr "AaCc" "ZzEe" < /dev/stdin
+tr 'A' 'Z' | tr 'c' 'e'
